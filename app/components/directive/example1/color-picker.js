@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('myApp.mtagColorPicker', ['ngRoute'])
+  angular.module('myApp.mtagColorPicker', [])
       .directive('mtagColorPicker', colorPickerDirective);
 
   function colorPickerDirective() {
