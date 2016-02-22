@@ -8,5 +8,6 @@ angular.module('myApp', [
   'myApp.mtagUpperCaseFilter',
   'myApp.mtagRegexFilter',
   'myApp.mtagArrayFilter',
-  'myApp.mtagCalculationService'
+  'myApp.mtagCalculationService',
+  'myApp.mtagConstantService'
 ]);
