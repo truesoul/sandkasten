@@ -37,9 +37,17 @@
   <label>Regex Filter</label>
   <input type="text" ng-model="filterExample2"> {{filterExample2|mtagRegex: '[0-9]': 'X'}}
 
+  </br>
+  <label>Array Filter:</label>
+  <div ng-controller="mtagController">
+    <span ng-repeat="item in filterExampleArray = ( filterExampleArray | mtagArrayFilter:accept) ">{{item}}</span>
+  </div>
+
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
+
+  <script src="components/controller/mtag-controller.js"></script>
 
   <script src="components/directive/example1/color-picker.js"></script>
   <script src="components/directive/example2/mouse-down.js"></script>
@@ -47,6 +55,7 @@
 
   <script src="components/filter/example1/upper-case-filter.js"></script>
   <script src="components/filter/example2/regex-filter.js"></script>
+  <script src="components/filter/example3/array-filter.js"></script>
 
 </body>
 </html>
