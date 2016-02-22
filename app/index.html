@@ -23,8 +23,14 @@
 
   {{example.toUpperCase()}} oder {{1 + 2 + 3}}
   <br>
-  <!-- DIRECTIVEN -->
 
+  <!-- ng-repeat und ng-init -->
+  <div ng-init="mtagArray = [1, 2, 3]">
+    <!-- ng-repeat="item in filterExampleArray" -->
+    <span ng-repeat="item in mtagArray">{{item}}</span>
+  </div>
+
+  <!-- DIRECTIVEN -->
   <mtag-color-picker></mtag-color-picker>
   <br><br>
   <label>Mouse Down</label>
@@ -47,15 +53,22 @@
   <br><br>
   <label>Array Filter:</label>
   <div ng-controller="mtagController">
-    // ng-repeat="item in filterExampleArray"
-    <span ng-repeat="item in filtered = ( filterExampleArray | mtagArrayFilter:accept) ">{{item}}</span>
+    <!-- ng-repeat="item in filterExampleArray" -->
+    <span ng-repeat="item in filtered = ( filterExampleArray | mtagArrayFilter:accept ) ">{{item}}</span>
   </div>
 
 
+  <!-- NG-SHOW und/oder NG-IF -->
 
+  <br><br>
+  <label>NG-SHOW und/oder NG-IF:</label>
+  <div ng-init="mtagArray = [1, 2, 3]">
+    <!-- ng-repeat="item in filterExampleArray" -->
+    <span ng-repeat="item in mtagArray" ng-show="item % 2 == 1">{{item}}</span>
 
-
-
+    <br>
+    <span ng-repeat="item in mtagArray" ng-if="item % 2 == 1">{{item}}</span>
+  </div>
 
 
 
