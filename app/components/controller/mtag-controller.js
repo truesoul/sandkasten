@@ -5,6 +5,8 @@
 
     function mtagController($scope, $http, MtagCalculationService, MtagConstantService) {
         $scope.filterExampleArray = ['1', '2', '3', 'A'];
+        $scope.server = MtagConstantService.HOST +":"+MtagConstantService.PORT;
+        $scope.calc = '';
 
         $scope.accept = function(item){
             if(!item)
@@ -19,12 +21,12 @@
             result = MtagCalculationService.multiplikation(result, 5);
             result = MtagCalculationService.division(result, 2);
             result = MtagCalculationService.subtraktion(result, 1);
-            console.log(result);
+            $scope.calc = result;
         }
 
         calculation();
 
-        console.log(MtagConstantService.HOST +":"+MtagConstantService.PORT);
+
 
     }
 })();

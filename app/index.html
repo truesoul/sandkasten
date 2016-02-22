@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+<body ng-controller="mtagController">
 
   <!-- TWO-WAY-BINDINGS -->
   <input type="text" ng-model="example">{{example}}
@@ -52,7 +52,7 @@
 
   <br><br>
   <label>Array Filter:</label>
-  <div ng-controller="mtagController">
+  <div >
     <!-- ng-repeat="item in filterExampleArray" -->
     <span ng-repeat="item in filtered = ( filterExampleArray | mtagArrayFilter:accept ) ">{{item}}</span>
   </div>
@@ -70,8 +70,12 @@
     <span ng-repeat="item in mtagArray" ng-if="item % 2 == 1">{{item}}</span>
   </div>
 
-
-
+  <br>
+  <!-- FACTORY -->
+  Service Berechnung: {{calc}}
+  <!-- CONSTANTE -->
+  <br>
+  Server: {{server}}
 
 
 
