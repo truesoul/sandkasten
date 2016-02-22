@@ -16,32 +16,51 @@
 </head>
 <body>
 
+  <!-- TWO-WAY-BINDINGS -->
+  <input type="text" ng-model="example">{{example}}
+  <br>
+  <!-- EXPRESSIONS -->
+
+  {{example.toUpperCase()}} oder {{1 + 2 + 3}}
+  <br>
   <!-- DIRECTIVEN -->
 
   <mtag-color-picker></mtag-color-picker>
-  </br>
+  <br><br>
   <label>Mouse Down</label>
-  <input type="text" mtag-mouse-down>
-  </br>
+  <input type="text" mtag-mouse-down >
+  <br><br>
   <label>Custom Class</label>
   <input type="text" class="mtag-custom-class">
 
   <!-- <div class="mtag-custom-class"></div> -->
 
   <!-- FILTER --->
-  </br>
+  <br><br>
   <label>Uppercase Filter</label>
   <input type="text" ng-model="filterExample1"> {{filterExample1|mtagUpperCase}}
 
-  </br>
+  <br><br>
   <label>Regex Filter</label>
   <input type="text" ng-model="filterExample2"> {{filterExample2|mtagRegex: '[0-9]': 'X'}}
 
-  </br>
+  <br><br>
   <label>Array Filter:</label>
   <div ng-controller="mtagController">
-    <span ng-repeat="item in filterExampleArray = ( filterExampleArray | mtagArrayFilter:accept) ">{{item}}</span>
+    // ng-repeat="item in filterExampleArray"
+    <span ng-repeat="item in filtered = ( filterExampleArray | mtagArrayFilter:accept) ">{{item}}</span>
   </div>
+
+
+
+
+
+
+
+
+
+
+
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
