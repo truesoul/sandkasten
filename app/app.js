@@ -7,5 +7,6 @@ angular.module('myApp', [
   'myApp.mtagCustomClass',
   'myApp.mtagUpperCaseFilter',
   'myApp.mtagRegexFilter',
-  'myApp.mtagArrayFilter'
+  'myApp.mtagArrayFilter',
+  'myApp.mtagCalculationService'
 ]);

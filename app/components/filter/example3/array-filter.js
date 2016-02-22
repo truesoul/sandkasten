@@ -9,7 +9,6 @@
             var result = [];
             if(angular.isArray(array)){
                 angular.forEach(array, function (value) {
-                    console.log(fnc);
                     if(angular.isFunction(fnc)){
                         if(fnc(value)){
                             result.push(value);
