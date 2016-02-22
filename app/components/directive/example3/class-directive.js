@@ -1,9 +1,9 @@
 (function() {
     'use strict';
     angular.module('myApp.mtagCustomClass', [])
-        .directive('mtagCustomClass', mouseDownDirective);
+        .directive('mtagCustomClass', mtagCustomClass);
 
-    function mouseDownDirective() {
+    function mtagCustomClass() {
         return {
             restrict: 'C',
             // template: '<span>Ein Text</span>',
