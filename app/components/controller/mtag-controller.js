@@ -8,6 +8,8 @@
         $scope.server = MtagConstantService.HOST +":"+MtagConstantService.PORT;
         $scope.calc = '';
 
+        $scope.myalert = myalert;
+
         $scope.accept = function(item){
             if(!item)
                 return false;
@@ -26,7 +28,9 @@
 
         calculation();
 
-
+        function myalert(){
+            alert("HALLO");
+        }
 
     }
 })();
