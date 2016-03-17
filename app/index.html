@@ -27,7 +27,9 @@
   <!-- ng-repeat und ng-init -->
   <div ng-init="mtagArray = [1, 2, 3]">
     <!-- ng-repeat="item in filterExampleArray" -->
-    <span ng-repeat="item in mtagArray">{{item}}</span>
+    <span ng-repeat="item in mtagArray">
+      <span>{{item}},</span>
+    </span>
   </div>
 
   <!-- DIRECTIVEN -->
@@ -76,6 +78,20 @@
   <!-- CONSTANTE -->
   <br>
   Server: {{server}}
+
+
+
+  <div >
+    <select ng-model="selection" ng-options="item for item in [1, 2, 3]" ng-init="selection = 1">
+    </select>
+
+    <div
+         ng-switch on="selection">
+      <div  ng-switch-when="1">{{selection}} Div</div>
+      <div  ng-switch-when="2">{{selection}} Span</div>
+      <div  ng-switch-default>{{selection}} default</div>
+    </div>
+  </div>
 
 
 
