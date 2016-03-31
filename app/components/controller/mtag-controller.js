@@ -3,7 +3,7 @@
     angular.module('myApp.mtagController', [])
         .controller('mtagController', mtagController);
 
-    function mtagController($scope, $http, MtagCalculationService, MtagConstantService) {
+    function mtagController($scope, MtagCalculationService, MtagConstantService) {
         $scope.filterExampleArray = ['1', '2', '3', 'A'];
         $scope.server = MtagConstantService.HOST +":"+MtagConstantService.PORT;
         $scope.calc = '';
