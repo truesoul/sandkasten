@@ -9,6 +9,7 @@
         $scope.calc = '';
 
         $scope.myalert = myalert;
+        $scope.mouseDownCallback = mouseDownCallback;
 
         $scope.accept = function(item){
             if(!item)
@@ -30,6 +31,10 @@
 
         function myalert(){
             alert("HALLO");
+        }
+
+        function mouseDownCallback(arg1){
+            alert(arg1);
         }
 
     }

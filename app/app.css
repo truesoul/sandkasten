@@ -28,3 +28,12 @@
   content: "";
   padding: 0;
 }
+
+.array-item.ng-enter {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  background-color: yellow;
+}
+.array-item.ng-enter-active {
+  background-color: white;
+}

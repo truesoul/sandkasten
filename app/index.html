@@ -17,7 +17,8 @@
 <body ng-controller="mtagController">
 
   <!-- TWO-WAY-BINDINGS -->
-  <input type="text" ng-model="example">{{example}}
+  <input type="text" ng-model="example"> Ausgabe: {{example}}
+
   <br>
   <!-- EXPRESSIONS -->
 
@@ -37,6 +38,9 @@
   <br><br>
   <label>Mouse Down</label>
   <input type="text" mtag-mouse-down >
+  <br><br>
+  <label>Mouse Down 2</label>
+  <input type="text" mtag-mouse-down2 on-callback="mouseDownCallback(arg1)">
   <br><br>
   <label>Custom Class</label>
   <input type="text" class="mtag-custom-class">
@@ -64,9 +68,19 @@
 
   <br><br>
   <label>NG-SHOW und/oder NG-IF:</label>
-  <div ng-init="mtagArray = [1, 2, 3]">
+
+  <div ng-init="mtagArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11]">
     <!-- ng-repeat="item in filterExampleArray" -->
-    <span ng-repeat="item in mtagArray" ng-show="item % 2 == 1">{{item}}</span>
+    <span class="array-item" ng-repeat="item in mtagArray | filter:arraySearch" ng-show="item % 2 == 1">{{item}}</span>
+
+    <br>
+    <span ng-repeat="item in mtagArray" ng-if="item % 2 == 1">{{item}}</span>
+  </div>
+
+  <input type="number" ng-model="arraySearch">
+  <div ng-init="mtagArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11]">
+    <!-- ng-repeat="item in filterExampleArray" -->
+    <span class="array-item" ng-repeat="item in mtagArray | filter:arraySearch" ng-show="item % 2 == 1">{{item}}</span>
 
     <br>
     <span ng-repeat="item in mtagArray" ng-if="item % 2 == 1">{{item}}</span>
@@ -85,8 +99,7 @@
     <select ng-model="selection" ng-options="item for item in [1, 2, 3]" ng-init="selection = 1">
     </select>
 
-    <div
-         ng-switch on="selection">
+    <div ng-switch on="selection">
       <div  ng-switch-when="1">{{selection}} Div</div>
       <div  ng-switch-when="2">{{selection}} Span</div>
       <div  ng-switch-default>{{selection}} default</div>
@@ -97,12 +110,14 @@
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="app.js"></script>
 
   <script src="components/controller/mtag-controller.js"></script>
 
   <script src="components/directive/example1/color-picker.js"></script>
   <script src="components/directive/example2/mouse-down.js"></script>
+  <script src="components/directive/example2/mouse-down2.js"></script>
   <script src="components/directive/example3/class-directive.js"></script>
 
   <script src="components/filter/example1/upper-case-filter.js"></script>
