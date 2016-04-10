@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp', [
+var myApp = angular.module('myApp', [
   'myApp.mtagController',
   'myApp.mtagColorPicker',
   'myApp.mtagMouseDown',
@@ -11,5 +11,7 @@ angular.module('myApp', [
   'myApp.mtagArrayFilter',
   'myApp.mtagCalculationService',
   'myApp.mtagConstantService',
-  'ngAnimate'
+  'ngAnimate',
+  'myApp.mtagControllerTwo',
+  'myApp.mtagControllerOne'
 ]);

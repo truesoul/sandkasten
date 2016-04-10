@@ -104,6 +104,16 @@
       <div  ng-switch-when="2">{{selection}} Span</div>
       <div  ng-switch-default>{{selection}} default</div>
     </div>
+
+
+    Controller Example
+    <div ng-controller="mtagControllerOne">
+      {{oneCtrl.name}}
+      <div ng-controller="mtagControllerTwo">
+        {{twoCtrl.name}}
+        {{oneCtrl.name}}
+      </div>
+    </div>
   </div>
 
 
@@ -114,6 +124,8 @@
   <script src="app.js"></script>
 
   <script src="components/controller/mtag-controller.js"></script>
+  <script src="components/controller/controller-one.js"></script>
+  <script src="components/controller/controller-two.js"></script>
 
   <script src="components/directive/example1/color-picker.js"></script>
   <script src="components/directive/example2/mouse-down.js"></script>
